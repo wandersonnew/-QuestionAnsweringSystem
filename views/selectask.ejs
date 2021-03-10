@@ -1,0 +1,54 @@
+<%- include('partials/head'); %>
+<%- include('partials/navbar'); %>
+    <div class="container">
+        <h1 class="display-3">Question found</h1>
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h1 class="display-5"><%= ask.title %></h1>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><%= ask.description %></p>
+                    <button class="btn btn-dark">Reply</button>
+                </div>
+            </div>
+
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h1 class="display-4">To reply</h1>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/reply">
+                        <input type="hidden" name="ask_id" value="<%= ask.id %>">
+                        <div class="form-group">
+                            <label>write a reply</label>
+                            <textarea class="form-control" rows="3" name="reply"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Send</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h1 class="display-5">Replies</h1>
+                </div>
+                <div class="card-body">
+                    <% replies.forEach(function(reply){ %>
+                        <p class="card-text"><%= reply.reply %></p>
+                    <% }) %>
+                </div>
+            </div>
+
+
+            <nav aria-label="Page navigation example" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <% for (var i = 0; i < pages;  i++ ) { %>
+                        <li class="page-item"><a class="page-link" href="/selquestion/<%= ask.id %>/?page=<%= i+1 %>"><%= i+1 %></a></li>
+                    <% } %>
+                </ul>
+            </nav>
+
+    </div>
+<%- include('partials/footer'); %>

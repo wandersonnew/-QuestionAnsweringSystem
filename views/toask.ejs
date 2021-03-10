@@ -1,0 +1,28 @@
+<%- include('partials/head'); %>
+<%- include('partials/navbar'); %>
+
+
+    <div class="container mt-4">    
+
+        <div class="card">
+            <div class="card-header">
+                <h1 class="display-1">To ask</h1>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/receiveask">
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" class="form-control" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label>write a question</label>
+                        <textarea class="form-control" rows="3" name="question"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">To ask</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+<%- include('partials/footer'); %>
