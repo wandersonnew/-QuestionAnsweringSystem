@@ -70,7 +70,7 @@ Após isso você pode rodar o servidor.
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/wandersonnew/QuestionsAnswersSystem.git>
+$ git clone <https://github.com/wandersonnew/-QuestionAnsweringSystem.git>
 
 # Instale as dependências
 $ npm install
