@@ -80,6 +80,9 @@ $ nodemon index.js
 
 # O servidor inciará na porta:3000 - acesse <http://localhost:3000>
 ```
+### Observação
+Se não estiver criando as tabelas, você deve abrir as models dentro de /database/ AksModel.js e alterar esse comando Ask.sync({ force: false }) para Ask.sync({ force: true }), da mesma forma em Reply.sync({ force: false }) para Reply.sync({ force: true }).
+Após rodar o servidor e as tabelas serem criadas, comente essas linhas.
 
 ### Autor
 ---
